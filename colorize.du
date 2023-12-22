@@ -1,0 +1,120 @@
+const escape = "\x1b";
+
+enum Styles {
+    Reset     = 0,
+    Bold      = 1,
+    Dim       = 2,
+    Italic    = 3,
+    Underline = 4,
+    BlinkSlow = 5,
+    BlinkFast = 6,
+    Inverse   = 7,
+    Hidden    = 8,
+    Strikeout = 9
+}
+
+enum TextColors {
+    Black   = 30,
+    Red     = 31,
+    Green   = 32,
+    Yellow  = 33,
+    Blue    = 34,
+    Magenta = 35,
+    Cyan    = 36,
+    White   = 37,
+    Grey    = 90
+}
+
+enum BackgroundColors {
+    Black   = 40,
+    Red     = 41,
+    Green   = 42,
+    Yellow  = 43,
+    Blue    = 44,
+    Magenta = 45,
+    Cyan    = 46,
+    White   = 47
+}
+
+enum HighIntensityTextColors {
+	FgHiBlack    = 90,
+	FgHiRed      = 91,
+	FgHiGreen    = 92,
+	FgHiYellow   = 93,
+	FgHiBlue     = 94,
+	FgHiMagenta  = 95,
+	FgHiCyan     = 96,
+	FgHiWhite    = 97
+}
+
+enum HighIntensityBackgroundColors {
+    Black   = 100,
+	Red     = 101,
+	Green   = 102,
+	Yellow  = 103,
+	Blue    = 104,
+	Magenta = 105,
+	Cyan    = 106,
+	White   = 107
+}
+
+const
+    black = "{}[1;{}m".format(escape, TextColors.Black),
+    red = "{}[1;{}m".format(escape, TextColors.Red),
+    green = "{}[1;{}m".format(escape, TextColors.Green),
+    yellow = "{}[1;{}m".format(escape, TextColors.Yellow),
+    blue = "{}[1;{}m".format(escape, TextColors.Blue),
+    magenta = "{}[1;{}m".format(escape, TextColors.Magenta),
+    cyan = "{}[1;{}m".format(escape, TextColors.Cyan),
+    white = "{}[1;{}m".format(escape, TextColors.White);
+
+def printBlack(s) {
+    print(black + s);
+}
+
+def printRed(s) {
+    print(red + s);
+}
+
+def printGreen(s) {
+    print(green + s);
+}
+
+def printYellow(s) {
+    print(yellow + s);
+}
+
+def printBlue(s) {
+    print(blue + s);
+}
+
+def printMagenta(s) {
+    print(magenta + s);
+}
+
+def printCyan(s) {
+    print(cyan + s);
+}
+
+def printWhite(s) {
+    print(white + s);
+}
+
+def colorize(str, ...style) {
+    var s = "\x1b[";
+    var l = style.len();
+
+    if (style.len() > 0) {
+        for (var k = 0; k < style.len(); k+=1) {
+            s += style[k].toString();
+            if (l > 1 and k < l-1) {
+                s += ";";
+            }
+        }
+        s += "m";
+    } else {
+        return str;
+    }
+
+    return '{}{}\x1b[0m'.format(s, str);
+}
