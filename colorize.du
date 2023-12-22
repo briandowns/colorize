@@ -37,25 +37,25 @@ enum BackgroundColors {
 }
 
 enum HighIntensityTextColors {
-	FgHiBlack    = 90,
-	FgHiRed      = 91,
-	FgHiGreen    = 92,
-	FgHiYellow   = 93,
-	FgHiBlue     = 94,
-	FgHiMagenta  = 95,
-	FgHiCyan     = 96,
-	FgHiWhite    = 97
+    FgHiBlack    = 90,
+    FgHiRed      = 91,
+    FgHiGreen    = 92,
+    FgHiYellow   = 93,
+    FgHiBlue     = 94,
+    FgHiMagenta  = 95,
+    FgHiCyan     = 96,
+    FgHiWhite    = 97
 }
 
 enum HighIntensityBackgroundColors {
     Black   = 100,
-	Red     = 101,
-	Green   = 102,
-	Yellow  = 103,
-	Blue    = 104,
-	Magenta = 105,
-	Cyan    = 106,
-	White   = 107
+    Red     = 101,
+    Green   = 102,
+    Yellow  = 103,
+    Blue    = 104,
+    Magenta = 105,
+    Cyan    = 106,
+    White   = 107
 }
 
 const
