@@ -106,7 +106,10 @@ def colorize(str, ...style) {
 
     if (style.len() > 0) {
         for (var k = 0; k < style.len(); k+=1) {
-            s += style[k].toString();
+            if (type(style[k]) == "number") {
+                s += style[k].toString();
+            } 
+            
             if (l > 1 and k < l-1) {
                 s += ";";
             }
